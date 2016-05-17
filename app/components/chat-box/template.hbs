@@ -1,0 +1,16 @@
+{{yield}}
+<div class="container">
+  <div class="messages">
+    {{#each messages as |message|}}
+      {{#if message.isBot}}
+        {{chat-box-bot message=message}}
+      {{else}}
+        {{chat-box-user message=message}}
+      {{/if}}
+    {{/each}}
+  </div>
+  <div class="input-container">
+    {{input value=text placeholder="What do you need help with?"}}
+    <button {{action "submit"}}>Send</button>
+  </div>
+</div>

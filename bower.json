@@ -1,0 +1,12 @@
+{
+  "name": "bot-app",
+  "dependencies": {
+    "ember": "~2.3.1",
+    "ember-cli-shims": "0.1.0",
+    "ember-cli-test-loader": "0.2.2",
+    "ember-qunit-notifications": "0.1.0",
+    "normalize-css": "normalize.css#^4.1.1",
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6"
+  }
+}
