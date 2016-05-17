@@ -3,6 +3,7 @@ import config from '../../config/environment';
 
 export default Ember.Component.extend({
   messages: [],
+  'show-defaults': false,
   text: '',
   didInsertElement() {
     this._socket = window.io(config.SOCKET_URL);
@@ -18,9 +19,13 @@ export default Ember.Component.extend({
   },
   actions: {
     submit(text) {
-      this._socket.emit('message', {
-        text
-      });
+      if (text === 'defaults') {
+        this.set('show-defaults', true);
+      } else {
+        this._socket.emit('message', {
+          text
+        });
+      }
       this.set('text', '');
     }
   }
