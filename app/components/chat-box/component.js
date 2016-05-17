@@ -17,9 +17,9 @@ export default Ember.Component.extend({
     });
   },
   actions: {
-    submit() {
+    submit(text) {
       this._socket.emit('message', {
-        text: this.get('text')
+        text
       });
       this.set('text', '');
     }
