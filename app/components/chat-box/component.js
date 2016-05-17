@@ -15,18 +15,24 @@ export default Ember.Component.extend({
         text: message.text,
         isBot: message.emitter.indexOf(this._socket.id) === -1
       });
+      Ember.run.scheduleOnce('afterRender', this, function() {
+        let $messages = this.$('.messages');
+        $messages.scrollTop($messages.prop('scrollHeight'));
+      });
     });
   },
   actions: {
     submit(text) {
-      if (text === 'defaults') {
-        this.set('show-defaults', true);
-      } else {
-        this._socket.emit('message', {
-          text
-        });
+      if (text) {
+        if (text === 'defaults') {
+          this.set('show-defaults', true);
+        } else {
+          this._socket.emit('message', {
+            text
+          });
+        }
+        this.set('text', '');
       }
-      this.set('text', '');
     }
   }
 });

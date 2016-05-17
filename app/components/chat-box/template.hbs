@@ -31,8 +31,8 @@
       {{/chat-box-default}}
     </div>
   {{/if}}
-  <div class="input-container">
+  <form class="input-container">
     {{input value=text placeholder="What do you need help with?"}}
-    <button {{action "submit" text}}>Send</button>
-  </div>
+    <button {{action "submit" text}} type="submit">Send</button>
+  </form>
 </div>
