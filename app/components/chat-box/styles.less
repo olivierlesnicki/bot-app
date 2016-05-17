@@ -13,15 +13,41 @@
     border: 1px solid #ccc;
     padding: 0 12px;
   }
-  button {
-    height: 44px;
+  button.button-reply {
+    display: block;
     color:#fff;
     border:none;
     background:#F15D22;
-    height: 44px;
+    min-height: 44px;
     border-radius: 4px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 13px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+  }
+  button.button-navigate {
+    display: block;
+    border:none;
+    background:#FFF;
+    border: 2px solid #F15D22;
+    color: #F15D22;
+    min-height: 44px;
+    border-radius: 4px;
+    padding: 13px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+  }
+  button.button-text {
+    border: none;
+    background: none;
+    color: #F15D22;
+    display: inline;
+    padding: 0;
     outline: none;
     cursor: pointer;
   }
@@ -34,7 +60,11 @@
     height: 360px;
     overflow-y: scroll;
   }
-  .defaults {
-    margin-bottom: 8px;
+  .panic {
+    margin-bottom: 16px;
+    display: flex;
+    button {
+      margin-right: 8px;
+    }
   }
 }

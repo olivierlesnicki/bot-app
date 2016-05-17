@@ -1,0 +1,31 @@
+{{#if scenario}}
+  <div class="navbar">
+    <span>
+      Select a message to post
+    </span>
+    <button class="button-text" {{action "selectScenario"}}>Exit</button>
+  </div>
+  <div class="replies-browser">
+    <button class="button-text" {{action "previous"}}>Previous</button>
+    <div class="replies">
+      {{#each step as |message|}}
+        {{#chat-box-reply class="button-reply" action=(action "postMessage" message)}}
+          {{message}}
+        {{/chat-box-reply}}
+      {{/each}}
+    </div>
+    <button class="button-text" {{action "next"}}>Next</button>
+  </div>
+{{else}}
+  <div class="navbar">
+    <span>
+      Select a scenario
+    </span>
+  </div>
+  <div class="scenarios">
+    {{#each scenarios as |scenario|}}
+      <button class="button-navigate" {{action "selectScenario" scenario}}>{{scenario.title}}</button>
+    {{/each}}
+  </div>
+{{/if}}
+{{yield}}

@@ -9,30 +9,19 @@
       {{/if}}
     {{/each}}
   </div>
-  {{#if show-defaults}}
-    <div class="defaults">
-      {{#chat-box-default action=(action "submit")}}
-        Hey how are you?
-      {{/chat-box-default}}
-      {{#chat-box-default action=(action "submit")}}
-        Hey how are you?
-      {{/chat-box-default}}
-      {{#chat-box-default action=(action "submit")}}
-        Hey how are you?
-      {{/chat-box-default}}
-      {{#chat-box-default action=(action "submit")}}
-        Hey how are you?
-      {{/chat-box-default}}
-      {{#chat-box-default action=(action "submit")}}
-        Hey how are you?
-      {{/chat-box-default}}
-      {{#chat-box-default action=(action "submit")}}
+  {{#if show-console}}
+    {{chat-box-runner action=(action "submit")}}
+    <div class="panic">
+      {{#chat-box-reply class="button-reply" action=(action "submit")}}
+        I'm sorry I didn't understand that. Please try again, or if I'm not helping then click below to speak to a human.
+      {{/chat-box-reply}}
+      {{#chat-box-reply class="button-reply" action=(action "submit")}}
         reset
-      {{/chat-box-default}}
+      {{/chat-box-reply}}
     </div>
   {{/if}}
   <form class="input-container">
     {{input value=text placeholder="What do you need help with?"}}
-    <button {{action "submit" text}} type="submit">Send</button>
+    <button {{action "submit" text}} class="button-reply" type="submit">Send</button>
   </form>
 </div>
