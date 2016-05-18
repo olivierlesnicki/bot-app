@@ -3,6 +3,7 @@ import Ember from 'ember';
 let scenarios = [{
   title: 'Bill Too High',
   steps: [
+    ['I\'m your secure automated assistant, DirectBot'],
     ['I understand your bill was higher than expected.I can see that you haven\'t submitted a meter read for 3 months. An estimated bill could be higher than you expected to pay. Would you like to submit a meter read now?'],
     [
       'Ok. Great. Let’s start with your electricity. What is your meter reading?',
@@ -20,6 +21,7 @@ let scenarios = [{
 }, {
   title: 'Change bank details',
   steps: [
+    ['I\'m your secure automated assistant, DirectBot'],
     ['I understand you\'d like to change your bank details. I can help you with that. Can you start by giving me your new sort code?'],
     [
       'Ok. Thanks for that. Now what is your new account number?',
@@ -40,6 +42,7 @@ let scenarios = [{
 }, {
   title: 'Can\'t Pay',
   steps: [
+    ['I\'m your secure automated assistant, DirectBot'],
     ['I understand you\'re unable to pay your bill. I\'m here to help. Do you think you\'ll be able to pay in the next 7 days?'],
     [
       'Ok. Thanks for letting us know. This is something that would be best discussed with a human. Click the button below to see our contact options.',
